@@ -14,13 +14,13 @@ Get-Content $dir_file | ForEach-Object{
         if ($rta -eq ""){
             $texto = ""
             $texto = "Cambios en el repo "+$_
-            New-BurntToastNotification -AppLogo C:\Users\Rulo\Documents\git-notifier\icon.png -Text "Git Notifier", $texto
+            New-BurntToastNotification -AppLogo C:\Users\Rulo\Documents\git-notifier\scripts\icon.png -Text "Git Notifier", $texto
         }
     }
     else {
         $texto = ""
         $texto = $_+" no es un repositorio!"
-        New-BurntToastNotification -AppLogo C:\Users\Rulo\Documents\git-notifier\icon.png -Text "Git Notifier", $texto
+        New-BurntToastNotification -AppLogo C:\Users\Rulo\Documents\git-notifier\scripts\icon.png -Text "Git Notifier", $texto
     }
 
 }
