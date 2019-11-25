@@ -47,8 +47,10 @@ $addButton= New-Object System.Windows.Forms.Button
 $addButton.Location = '26,52'
 $addButton.text = 'Add'
 $addButton.Add_Click({
+    $helper.Text=""
     If($folderBrowser.SelectedPath){
-        If(Test-Path $folderBrowser.SelectedPath){
+        $dir = $folderBrowser.SelectedPath
+        If((Test-Path $folderBrowser.SelectedPath) -AND (Test-Path $dir\.git)){
             $helper.Text="True"
             AddToRepoList $folderBrowser.SelectedPath
         }
